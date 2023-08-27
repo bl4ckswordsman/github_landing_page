@@ -14,6 +14,6 @@ Especially useful if your main project site or documentation that you want to de
 There's also some placeholders that can be changed or removed, other than that, all is retrieved automatically from the actual Github URL.
 
 ## Example
-Click [here]() to see an example.
+Click [here](https://bl4ckswordsman.github.io/abc_app/) to see an example.
 
 ![image](https://github.com/bl4ckswordsman/github_landing_page/assets/91825788/d95f4965-07c5-400c-86b0-2efea8a0da99)
