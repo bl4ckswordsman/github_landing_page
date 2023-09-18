@@ -17,3 +17,5 @@ There's also some placeholders that can be changed or removed, other than that, 
 Click [here](https://bl4ckswordsman.github.io/abc_app/) to see an example.
 
 ![image](https://github.com/bl4ckswordsman/github_landing_page/assets/91825788/d95f4965-07c5-400c-86b0-2efea8a0da99)
+
+[![Visits Badge](https://badges.pufler.dev/visits/bl4ckswordsman/github_landing_page)](https://github.com/bl4ckswordsman)
