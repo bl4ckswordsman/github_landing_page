@@ -27,7 +27,7 @@ If you want to use this landing page in your project via a CDN, follow these ste
     ```html
     <script type="module">
         import {generateLandingPage, initializeDynamicContent}
-            from 'https://cdn.jsdelivr.net/gh/bl4ckswordsman/github_landing_page@cdn/ghlp8.js';
+            from 'https://cdn.jsdelivr.net/gh/bl4ckswordsman/github_landing_page@cdn/ghlp9.js';
     
         /*---Change the 'PROJECTDIR' to your project's web directory---*/
         const pojectDir = 'PROJECTDIR';

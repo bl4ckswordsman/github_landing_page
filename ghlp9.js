@@ -1,10 +1,10 @@
-function getUsernameFromURL() {
+function getRepoFromURL() {
     const url = new URL(window.location.href);
     const parts = url.pathname.split('/');
     return parts[1]; // Assuming the username is the second part of the pathname
 }
 
-function getRepoFromURL() {
+function getUsernameFromURL() {
     const url = new URL(window.location.href);
     const parts = url.pathname.split('/');
     return parts[2]; // Assuming the repository name is the third part of the pathname
