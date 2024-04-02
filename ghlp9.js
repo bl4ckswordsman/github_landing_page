@@ -1,11 +1,11 @@
 function getRepoFromURL() {
-    const url = new URL(window.location.href);
+    const url = "https://bl4ckswordsman.github.io/abc_app/"
     const parts = url.pathname.split('/');
     return parts[1]; // Assuming the username is the second part of the pathname
 }
 
 function getUsernameFromURL() {
-    const url = new URL(window.location.href);
+    const url = "https://bl4ckswordsman.github.io/abc_app/";
     const parts = url.pathname.split('/');
     return parts[2]; // Assuming the repository name is the third part of the pathname
 }
