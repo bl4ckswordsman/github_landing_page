@@ -1,13 +1,13 @@
-function getRepoFromURL() {
-    const url = new URL(window.location.href);
-    const parts = url.pathname.split('/');
-    return parts[2]; // Assuming the username is the second part of the pathname
+function getUsernameFromURL() {
+    const url = window.location.href;
+    const parts = url.split('.');
+    return parts[0].replace("https://", "");
 }
 
-function getUsernameFromURL() {
-    const url = new URL(window.location.href);
-    const parts = url.pathname.split('/');
-    return parts[1]; // Assuming the repository name is the third part of the pathname
+function getRepoFromURL() {
+    const url = window.location.href;
+    const parts = url.split('/');
+    return parts[3];
 }
 
 export function generateLandingPage(ghDotIoDir) {
@@ -71,7 +71,7 @@ export function initializeDynamicContent(ghDotIoDir) {
                 if (response.ok) {
                     healthIcon.innerHTML = "&#10004;"; // Checkmark symbol
                     healthText.textContent = "Project page is available!";
-                    window.location.href = `https://${userName}.github.io/${repoName}/${ghDotIoDir}`;
+                    window.location.href = `https://${userName}.github.io/${repoName}${ghDotIoDir.startsWith('/') ? '' : '/'}${ghDotIoDir}`;
                 } else {
                     healthIcon.innerHTML = "&#10008;"; // X symbol
                     healthText.textContent = "No Github Page for this project.";
