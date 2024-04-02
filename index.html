@@ -1,5 +1,10 @@
 <script type="module">
-    import { generateLandingPage } from 'https://cdn.jsdelivr.net/gh/bl4ckswordsman/github_landing_page@cdn/landing-page.js';
+    import {generateLandingPage}
+        from 'https://cdn.jsdelivr.net/gh/bl4ckswordsman/github_landing_page@cdn/ghlp.js';
 
-    document.body.innerHTML = generateLandingPage('PROJECDIR');
+    async function loadPage() {
+        document.body.innerHTML = generateLandingPage('PROJECDIR');
+    }
+
+    loadPage();
 </script>
