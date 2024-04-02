@@ -1,4 +1,4 @@
-function generateLandingPage(ghDotIoDir) {
+function generateLandingPage(userName, repoName, ghDotIoDir) {
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -54,20 +54,8 @@ function generateLandingPage(ghDotIoDir) {
     <div class="footer p-3 text-center rounded-bottom" style="background-color: #222;word-break: break-word">
         <p class="mt-0">Copyright &copy;
             <script>
-                function getUsernameFromURL() {
-                    const url = new URL(window.location.href);
-                    const parts = url.pathname.split('/');
-                    return parts[1]; // The username is the second part of the pathname
-                }
-
-                function getRepoFromURL() {
-                    const url = new URL(window.location.href);
-                    const parts = url.pathname.split('/');
-                    return parts[2]; // The repository name is the third part of the pathname
-                }
-
                 document.write(new Date().getFullYear());
-                document.write(" " + getUsernameFromURL());
+                document.write(" " + "${userName}");
             </script>
         </p>
     </div>
@@ -80,14 +68,12 @@ function generateLandingPage(ghDotIoDir) {
 <script>
     // Set the href of the GitHub link
     const profileLink = document.getElementById("GHProfileLink");
-    const userName = getUsernameFromURL();
     profileLink.href = \`https://github.com/${userName}\`;
-    profileLink.textContent = userName; // Set link text
+    profileLink.textContent = "${userName}"; // Set link text
 
     const projectLink = document.getElementById("projectLink");
-    const project = getRepoFromURL();
-    projectLink.href = \`https://github.com/${userName}/${project}\`;
-    projectLink.textContent = project;
+    projectLink.href = \`https://github.com/${userName}/${repoName}\`;
+    projectLink.textContent = "${repoName}";
 
     const goToProjectBtn = document.getElementById("goToProjectBtn");
     const healthIcon = document.getElementById("healthIcon");
@@ -95,12 +81,12 @@ function generateLandingPage(ghDotIoDir) {
 
     goToProjectBtn.addEventListener("click", () => {
         healthText.textContent = "Checking project page...";
-        fetch(\`https://${userName}.github.io/${project}/${ghDotIoDir}\`)
+        fetch(\`https://${userName}.github.io/${repoName}/${ghDotIoDir}\`)
             .then(response => {
                 if (response.ok) {
                     healthIcon.innerHTML = "&#10004;"; // Checkmark symbol
                     healthText.textContent = "Project page is available!";
-                    window.open(\`https://${userName}.github.io/${project}/${ghDotIoDir}\`);
+                    window.open(\`https://${userName}.github.io/${repoName}/${ghDotIoDir}\`);
                 } else {
                     healthIcon.innerHTML = "&#10008;"; // X symbol
                     healthText.textContent = "No Github Page for this project.";
