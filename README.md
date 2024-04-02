@@ -25,17 +25,24 @@ If you want to use this landing page in your project via a CDN, follow these ste
    repository. You can also create a new `index.html` in the aforementioned paths and paste the following content:
 
     ```html
-    import { generateLandingPage } from 'https://cdn.jsdelivr.net/gh/bl4ckswordsman/github_landing_page@cdn/ghlp.js';
-
-    document.body.innerHTML = generateLandingPage('PROJECDIR');
-
-    // Apply vertical centering and dark background
-    document.body.style.display = 'flex';
-    document.body.style.alignItems = 'center';
-    document.body.style.backgroundColor = '#212529'; // bootstrap gray-900
+    <script type="module">
+        import {generateLandingPage, initializeDynamicContent}
+            from 'https://cdn.jsdelivr.net/gh/bl4ckswordsman/github_landing_page@cdn/ghlp.js';
+        
+        /*---Change the 'PROJECTDIR' to your project's web directory---*/
+        const projectDir = 'PROJECTDIR';
+    
+        document.body.innerHTML = generateLandingPage(projectDir);
+        initializeDynamicContent(projectDir);
+    
+        // Apply vertical centering and dark background
+        document.body.style.display = 'flex';
+        document.body.style.alignItems = 'center';
+        document.body.style.backgroundColor = '#212529'; // bootstrap gray-900
+    </script>
     ```
 
-2. Replace `'PROJECDIR'` with the relative path to your actual site.
+2. Replace `'PROJECTDIR'` with the relative path to your actual site.
    For example, if your site is at `build/web`, you would change it to
    `document.body.innerHTML = generateLandingPage('build/web')`.
 
@@ -48,7 +55,7 @@ That's it! The landing page will now be fetched from the CDN and displayed in yo
 
 1. Just place this [index.html](https://github.com/bl4ckswordsman/github_landing_page/tree/master/index.html) file at
    the root (`/`) or `/docs` path of your repository.
-2. Then, in the `index.html`, change `PROJECDIR` in `const ghDotIoDir = "PROJECDIR";` to your actual site's relative
+2. Then, in the `index.html`, change `PROJECTDIR` in `const ghDotIoDir = "PROJECDIR";` to your actual site's relative
    path. E.g. if my site is at `build/web`, I would change it to `const ghDotIoDir = "build/web";`
 
 There's also some placeholders that can be changed or removed, other than that, all is retrieved automatically from the
