@@ -21,7 +21,7 @@ see [here](https://docs.github.com/en/pages/getting-started-with-github-pages/co
 
 If you want to use this landing page in your project via a CDN, follow these steps:
 
-1. Copy the content of this [index.html]() file from the CDN branch and place it in the root (`/`) or `/docs` path your
+1. Copy the content of this [index.html]() file from the CDN branch and place it in the root (`/`) or `/docs` path of your
    repository. You can also create a new `index.html` in the aforementioned paths and paste the following content:
 
     ```html
